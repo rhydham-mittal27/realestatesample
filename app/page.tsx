@@ -364,7 +364,7 @@ export default function Home() {
   return (
     <MotionConfig reducedMotion="user">
       <main
-        className={`${fraunces.variable} ${nunito.variable} overflow-x-hidden bg-[#0D0A2B] font-[family-name:var(--font-body)] text-[#0D0A2B] antialiased`}
+        className={`${fraunces.variable} ${nunito.variable} overflow-x-clip bg-[#0D0A2B] font-[family-name:var(--font-body)] text-[#0D0A2B] antialiased`}
       >
         {/* Scroll progress */}
         <motion.div
