@@ -377,7 +377,7 @@ export default function Home() {
         <section
           ref={heroRef}
           id="home"
-          className="relative flex min-h-screen flex-col overflow-hidden text-white"
+          className="relative flex min-h-[100svh] flex-col overflow-hidden text-white md:min-h-screen"
         >
           <motion.div
             style={{ y: imgY }}
@@ -828,7 +828,7 @@ export default function Home() {
             onScroll={onTrackScroll}
             role="region"
             aria-label="Featured properties"
-            className="relative flex snap-x snap-mandatory gap-3 overflow-x-auto pb-10 pt-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 md:gap-5 md:overflow-visible"
+            className="relative flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain pb-10 pt-2 [scrollbar-width:none] [touch-action:pan-x] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 md:gap-5 md:overflow-visible"
           >
             {visibleProjects.map((home) => (
               <motion.a
@@ -839,7 +839,7 @@ export default function Home() {
                 aria-label={`${home.name}, ${home.location}, ${home.status}. Enquire`}
                 className={`group block min-w-[88%] shrink-0 snap-start rounded-[26px] bg-white p-2.5 shadow-[0_30px_60px_-30px_rgba(108,71,255,.5)] ring-1 ring-[#6C47FF]/10 sm:min-w-[82%] sm:rounded-[34px] sm:p-3 md:min-w-0 ${focusDark}`}
               >
-                <div className="relative h-[260px] overflow-hidden rounded-[20px] bg-[#E3DDFB] sm:h-[300px] sm:rounded-[26px] md:h-[340px]">
+                <div className="relative h-[220px] overflow-hidden rounded-[20px] bg-[#E3DDFB] sm:h-[300px] sm:rounded-[26px] md:h-[340px]">
                   <Image
                     src={home.image}
                     alt={`${home.name} in ${home.location}`}
@@ -852,13 +852,13 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="px-3 pb-4 pt-4">
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col items-start gap-2 sm:flex-row sm:justify-between sm:gap-3">
                     <h3
                       className={`text-lg font-medium leading-tight sm:text-xl ${display}`}
                     >
                       {home.name}
                     </h3>
-                    <span className="whitespace-nowrap rounded-full bg-[#F4F1FF] px-3 py-1.5 text-xs font-extrabold text-[#4B2BD6]">
+                    <span className="rounded-full bg-[#F4F1FF] px-3 py-1.5 text-xs font-extrabold text-[#4B2BD6]">
                       {home.detail}
                     </span>
                   </div>
