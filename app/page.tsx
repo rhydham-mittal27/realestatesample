@@ -154,31 +154,9 @@ const homes: Project[] = [
   },
 ];
 
-const team = [
-  {
-    name: "Mia Diaz",
-    role: "Property Advisor",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=85",
-  },
-  {
-    name: "Tina Korsgaard",
-    role: "Sales Marketing",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=85",
-  },
-  {
-    name: "Tiana Dorin",
-    role: "Property Agent",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=85",
-  },
-];
-
 const links = [
   { label: "Home", id: "home" },
   { label: "About Us", id: "about" },
-  { label: "Team", id: "team" },
   { label: "Our Properties", id: "properties" },
   { label: "Contact", id: "contact" },
 ];
@@ -634,7 +612,7 @@ export default function Home() {
                 At Your Brand, we believe that buying or selling a home should
                 be an exciting and stress-free experience.
               </p>
-              <PillLink href="#team" tone="dark">
+              <PillLink href="#properties" tone="dark">
                 About us
               </PillLink>
               <div className="mt-10 text-sm text-[#5A5675]">
@@ -710,63 +688,6 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </motion.section>
-
-        {/* ─── TEAM ─── */}
-        <motion.section
-          id="team"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={stagger}
-          className="relative overflow-hidden bg-[#0D0A2B] text-white"
-        >
-          <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_60%_at_85%_15%,rgba(108,71,255,.45),transparent)]"
-            aria-hidden="true"
-          />
-          <div className="relative mx-auto flex max-w-[1170px] flex-col gap-10 px-4 py-14 sm:px-6 sm:py-20 md:flex-row md:items-center md:gap-14 md:px-10 md:py-28">
-            <motion.ul
-              variants={reveal}
-              className="grid flex-1 grid-cols-3 gap-2 sm:gap-3 md:gap-4"
-            >
-              {team.map((p) => (
-                <li key={p.name} className="group">
-                  <div className="rounded-[30px] bg-transparent p-1 transition-colors duration-300 group-hover:bg-gradient-to-br group-hover:from-[#FF8A3D] group-hover:via-[#FF3D81] group-hover:to-[#6C47FF]">
-                    <div className="relative h-36 overflow-hidden rounded-[20px] bg-[#1b1647] sm:h-44 sm:rounded-[26px] md:h-64">
-                      <Image
-                        src={p.image}
-                        alt={`Portrait of ${p.name}`}
-                        fill
-                        sizes="(min-width: 768px) 14vw, 30vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                  <p className="mt-2 truncate px-1 text-xs font-bold sm:mt-3 sm:text-sm">
-                    {p.name}
-                  </p>
-                  <p className="truncate px-1 text-[10px] text-[#B9B3E0] sm:text-xs">
-                    {p.role}
-                  </p>
-                </li>
-              ))}
-            </motion.ul>
-            <motion.div variants={reveal} className="max-w-sm">
-              <h2
-                className={`text-3xl font-semibold leading-[1.08] tracking-[-.03em] sm:text-4xl md:text-5xl ${display}`}
-              >
-                Meet Our Expert Team
-              </h2>
-              <p className="mb-7 mt-4 text-base leading-relaxed text-[#C9C4EC]">
-                Our team of experienced professionals is committed to helping
-                you find the perfect home or investment property.
-              </p>
-              <PillLink href="#contact" tone="grad">
-                Contact the team
-              </PillLink>
             </motion.div>
           </div>
         </motion.section>
